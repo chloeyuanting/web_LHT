@@ -1,0 +1,37 @@
+.l-header
+  padding:  var(--spacing-24) 4vw
+  
+  &__img-mask
+    flex-shrink: 0
+    width: 32rem
+.c-nav
+  display: flex
+  flex-direction: column
+  // 使nav置中於畫面中
+  justify-content: center
+  align-items: flex-end
+  position: fixed
+  min-height: 100vh
+  right: 4vw
+  top: 0
+  z-index: 99
+  &__btn-wrap
+    text-align: right
+    width: 140px
+    margin-top: var(--spacing-16)
+    line-height: 1.2
+  &__link-box
+    margin-top: 11vh
+  &__link-wrap
+    margin-top: var(--spacing-4)
+
+  &__btn 
+    color: var(--color-secondary-mid)
+    transition: color 0.3s
+    &:hover
+      color: var(--color-secondary-cmid)
+      &::before
+        opacity: 1
+
+
+    

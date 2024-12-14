@@ -1,0 +1,112 @@
+*, *::before, *::after
+  //- 設定全部 relative，可以讓設有絕對定位的元素，直接定位父層
+  //- 因為通用選擇器會選擇所有元素
+  position: relative
+  box-sizing: border-box
+
+html
+  // 基本文字基底改成 10px，讓 rem 比較好換算
+  // 1.6rem = 16px
+  font-size: calc(16px / 1.6)
+  +media(lg)
+    // 讓原本 16px 的字變 15px
+    // 1.6rem -> 15px
+    // 1.6 * X = 15px
+    font-size: calc(15px / 1.6)
+  +media(ipad)
+    // 讓原本 16px 的字變 14px
+    // 1.6rem -> 14px
+    // 1.6 * X = 14px
+    font-size: calc(14px / 1.6)
+
+body
+  margin: 0
+  background-color: var(--color-black)
+  font-family: var(--font-primary)
+  font-size: 1.6rem
+  font-weight: 400
+  /* MacOS 字體去毛邊 */
+  -webkit-font-smoothing: antialiased
+  letter-spacing: 0.1rem
+  // 老師經驗的行高
+  line-height: 1.7
+  // 字體顏色
+  color: var(--color-gray-light)
+
+/* ------ Reset ------ */  
+// 防止雙點擊畫面放大
+a, button, input, label, select, textarea
+  -ms-touch-action: manipulation
+  touch-action: manipulation
+
+// 初始化 a 標籤
+a, button
+  display: block
+  text-decoration: none
+  color: inherit
+  user-select: none
+  &:hover
+    text-decoration: none
+    color: inherit
+
+// 初始化 button 標籤
+button
+  padding: 0
+  border: none
+  background: none
+
+// 初始化 img 標籤
+img
+  max-width: 100%
+  max-height: 100%
+  vertical-align: middle
+
+// 拿掉 ul 的點點
+ul
+  list-style: none
+  padding: 0
+  margin: 0
+
+// 初始化文字標籤
+h1, h2, h3, h4, h5, h6, p, button
+  margin: 0
+  // 因為套用一些插件樣式，會被蓋掉
+  // 所以統一調整成繼承
+  font-family: inherit
+  font-size: inherit
+  font-weight: inherit
+  line-height: inherit
+  color: inherit
+h1, h2, h3, h4, h5, h6
+  font-weight: 500
+
+// 因為小字或不長的文字，會用 span 標籤
+// 所以統一調成 block
+span
+  display: block
+  line-height: inherit
+
+
+/* ----------------------------------- */
+/* ------ Layouts ------ */
+/* ----------------------------------- */
+section
+  // 左右
+  --section-spacing-x: 4vw
+  // 上下
+  --section-spacing-y: var(--spacing-120)
+  padding: var(--section-spacing-y) var(--section-spacing-x)
+
+.container
+  --container-width: 138rem
+  max-width: var(--container-width)
+  &.--sm
+    --container-width: 88rem
+
+.row
+  &.--no-gap
+    --bs-gutter-x: 0
+    --bs-gutter-y: 0
+  &.--gap
+    --bs-gutter-x: var(--spacing-24)
+    --bs-gutter-y: var(--spacing-24)

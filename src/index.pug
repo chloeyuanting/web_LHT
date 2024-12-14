@@ -1,0 +1,181 @@
+doctype html
+html(lang="en")
+  head
+    include layouts/_Settings.pug
+    include layouts/_Head.pug
+  body 
+    include layouts/_Header.pug
+
+    main.l-main 
+      .l-hero
+        .l-hero__rectangle
+          h2.o-hero-slogan.u-text-3xl Start by PointCloud, make it REAL
+            br 
+            span.u-text-xl 3D數化世界由點雲開始
+        .l-hero__img-mask
+          img.u-object-fit(src="img/TAIWAN.png", alt="力弘科技")
+
+      section.l-synopsis
+        .container
+          .l-synopsis__title-wrap
+            h2.o-section-title 專業3D應用整合技術服務
+              br
+              | 提供各種3D雷射掃描儀、資料處理軟體、軟硬體教育訓練
+      
+      section.l-services 
+        .l-services__title-wrap
+          h2.o-services-title Services
+        .l-services__container
+        .container
+          article.c-card
+            .c-card__img-mask.u-pr-4
+              img(src="img/services/architecture01.jpg", alt="新竹火車站")
+            .c-card__img-mask.u-pr-4
+              img(src="img/services/architecture02.jpg", alt="天后宮")
+            .c-card__content              
+              h3.u-text-xl 建築 Architecture
+              p.u-text-body
+                | 精確紀錄古蹟的細節，數位化保存
+                br
+                | 透過數位模型，可進行修復規劃，虛擬展示
+              .o-btn.--align-right
+                a.o-btn__link(href="##") MORE
+          article.c-card
+            .c-card__content          
+              h3.u-text-xl.u-pr-4 監測 Monitoring
+              p.u-text-body
+                | 提供精確且實時的現況及數據
+                br
+                | 提高災後評估與修復效率，有助於長期的環境監測和保護
+              .o-btn.--align-right
+                a.o-btn__link(href="##") MORE
+            .c-card__content-pic 
+              .c-card__img-mask.u-pr-4
+                img(src="img/services/monitoring01.jpg", alt="監測")
+              .c-card__img-mask
+                img(src="img/services/monitoring02.jpg", alt="監測")
+     
+          article.c-card2
+            .swiper.c-card2__swiper
+              .swiper-wrapper
+                .swiper-slide.c-card__slide
+                  .c-card__img-mask
+                    img(src="img/services/factory01.jpg", alt="工廠紀錄")
+                .swiper-slide.c-card__slide
+                  .c-card__img-mask
+                    img(src="img/services/factory02.jpg", alt="工廠紀錄")
+                .swiper-slide.c-card__slide
+                  .c-card__img-mask
+                    img(src="img/services/factory03.jpg", alt="工廠紀錄")
+            .c-card2__content                    
+              h3.u-text-xl 工廠 Factory
+              p.u-text-body 掃描工廠內部設施或組件的幾何形狀，分析工業流程，改善空間，提升效率
+              .o-btn.--align-right
+                a.o-btn__link(href="##") MORE
+          article.c-card3
+            .c-card3__content          
+              h3.u-text-xl 逆向  
+                br 
+                | Reverse Engineering
+              p.u-text-body 
+                | 精確紀錄物體形狀、實際尺寸
+                br
+                | 快速製作原型，縮短開發週期
+              .o-btn.--align-right
+                a.o-btn__link(href="##") MORE
+            .swiper.c-card3__swiper
+              .swiper-wrapper
+                .swiper-slide
+                  .c-card__img-mask
+                    img.u-object-fit(src="img/services/reverse-engineering01.jpg", alt="逆向")
+                .swiper-slide
+                  .c-card__img-mask
+                    img.u-object-fit(src="img/services/reverse-engineering02.jpg", alt="逆向")
+         
+
+          article.c-card4
+            .swiper.c-card4__swiper
+              .swiper-wrapper
+                .swiper-slide
+                  .c-card__img-mask
+                    img.u-object-fit(src="img/services/cultural-relics01.jpg", alt="文物")
+                .swiper-slide
+                  .c-card__img-mask
+                    img.u-object-fit(src="img/services/cultural-relics02.jpg", alt="新竹城隍廟-石獅子,新竹影像博物館-放映機")
+                .swiper-slide
+                  .c-card__img-mask
+                    img.u-object-fit(src="img/services/cultural-relics03.jpg", alt="3D掃描-台博館")
+                .swiper-slide
+                  .c-card__img-mask
+                    img.u-object-fit(src="img/services/cultural-relics04.jpg", alt="攝影測量-台史博")
+                .swiper-slide
+                  .c-card__img-mask
+                    img.u-object-fit(src="img/services/cultural-relics05.jpg", alt="3D掃描-台史博")
+       
+            .c-card4__content        
+              h3.u-text-xl 文物  Cultural Relics
+              p.u-text-body
+                | 詳細記錄文物的細節
+                br
+                | 數位化後，可在線展示，提供學術研究與公眾教育
+                br
+                | 無需接觸原件，減少損害，促進文物保護與研究
+              .o-btn.--align-right
+                a.o-btn__link(href="##") MORE
+          
+              
+    include layouts/_Footer.pug
+        
+
+     
+
+
+    include layouts/_Scripts.pug
+
+    script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js")
+    script.
+      const swiper = new Swiper('.c-card2__swiper', {
+        effect: 'fade',
+        // 緩慢施放比例，拖一點點就可以換張
+        longSwipesRatio: 0.1,
+        loop: true,
+        // 類似 duration
+        speed: 1200,
+        autoplay: {
+          delay: 3000,
+          // 手動換張時，不停止自動輪播
+          disableOnInteraction: false
+        }
+
+      });
+      const card3swiper = new Swiper('.c-card3__swiper', {
+        effect: 'fade',
+        // 緩慢施放比例，拖一點點就可以換張
+        longSwipesRatio: 0.1,
+        loop: true,
+        // 類似 duration
+        speed: 1200,
+        autoplay: {
+          delay: 3000,
+          // 手動換張時，不停止自動輪播
+          disableOnInteraction: false
+        }
+
+      });
+      const card4swiper = new Swiper('.c-card4__swiper', {
+        effect: 'fade',
+        // 緩慢施放比例，拖一點點就可以換張
+        longSwipesRatio: 0.1,
+        loop: true,
+        // 類似 duration
+        speed: 1200,
+        autoplay: {
+          delay: 3000,
+          // 手動換張時，不停止自動輪播
+          disableOnInteraction: false
+        }
+ 
+      });
+  
+
+      

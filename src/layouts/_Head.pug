@@ -1,0 +1,37 @@
+meta(charset="UTF-8")
+meta(name="viewport", content="width=device-width, initial-scale=1.0")
+meta(name="robots", content="noindex, nofollow")
+meta(http-equiv="x-rim-auto-match", content="none")
+meta(name="format-detection", content="telephone=no")
+
+meta(property="og:type", content="website")
+meta(property="og:url", content=`${baseUrl}/${path}`)
+meta(property="og:image", content=`${baseUrl}/${image}`)
+//- <Page Title> - <Site Name>｜<Info Title>
+//- 判斷是不是內頁，有沒有 pageTitle
+- const title = `${pageTitle ? `${pageTitle} - `: ''}`
+meta(property="og:title", content=`${title}${siteName}｜${infoTitle}`)
+meta(property="og:description", content=description)
+//- 網頁描述
+meta(name="description", content=description)
+
+link(rel="icon", type="image/png", href=`${baseUrl}/favicon/favicon-48x48.png`, sizes="48x48")
+link(rel="icon", type="image/svg+xml", href=`${baseUrl}/favicon/favicon.svg`)
+link(rel="shortcut icon", href=`${baseUrl}/favicon/favicon.ico`)
+link(rel="apple-touch-icon", sizes="180x180", href=`${baseUrl}/favicon/apple-touch-icon.png`)
+meta(name="apple-mobile-web-app-title", content="力弘科技")
+link(rel="manifest", href=`${baseUrl}/favicon/site.webmanifest`)
+
+script(src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js")
+
+link(rel="preconnect", href="https://fonts.googleapis.com")
+link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+link(href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;900&family=Roboto:wght@700;900&display=swap", rel="stylesheet")
+
+link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous")
+link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css")
+
+link(rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css")
+link(rel="stylesheet", href=`${baseUrl}/css/style.css`)
+
+title #{title}#{siteName}｜#{infoTitle}

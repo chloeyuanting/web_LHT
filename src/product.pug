@@ -1,0 +1,157 @@
+include components/_ProductCard.pug
+
+doctype html
+html(lang="en")
+  head
+    include layouts/_Settings.pug
+    -
+      path = 'product.html';
+      pageTitle = '產品';
+      infoTitle = '產品項目:3D雷射掃描儀、點雲處理軟體';
+      description = '3D雷射掃描儀:Z+F IMAGER5016A、Z+F FlexScan22、eviXscan 3D、Mantis F6/F6SR';
+      image = '';
+    include layouts/_Head.pug
+  body
+    include layouts/_Header.pug
+
+    main 
+      .l-product
+        section
+          .container.--sm
+            .l-product__content
+              h2.o-title.--align-center.u-text-2xl 3D雷射掃描儀(3D Laser scanner)
+              p 用來數位化並分析現實世界中物體或環境的形狀（幾何構造）與外觀資料（如色彩、表面反射強度等性質）。 建立與實際物體一模一樣的數位模型。工業設計、產品瑕疵檢測、逆向工程、機器人導引、地形地貌測量、醫學資訊、 生物資訊、刑事鑑定、數位文物典藏、電影製片、遊戲創作素材等等都可見其應用。
+              br
+              li eviXscan 3D、Opentech3D、Mantis Vision系列:適用工業設計、產品檢測、逆向工程
+              li Thor3D、EinScan系列:針對人臉、公仔、古蹟文物
+              li Z+F、Goslam系列:適合古蹟建築、土木工程、3D城市、道路、河道、森林、特殊地景、刑事鑑定、電影遊戲場景、大型雕塑品
+
+            .swiper.product-card__swiper
+              .swiper-wrapper
+                -
+                  const productsList = [
+                    {
+                      title: '固定式\neviXscan 3D',
+                      content: '工業級高精度掃描',
+                      img: 'img/product/eviXscan3D.png',
+                      link: '##'
+                    },
+                    {
+                      title: '固定式\nOpentech3D',
+                      content: '工業級高精度掃描',
+                      img: 'img/product/Opentech3D.png',
+                      link: '##'
+                    },
+                    {
+                      title: '手持式\nMantis F6/F6SR',
+                      content: '操作簡單，易於上手',
+                      img: 'img/product/mantis.png',
+                      link: '##'
+                    },
+                    {
+                      title: '基站式\nZ+F IMAGER5016A',
+                      content: '精準捕捉，細節不放過',
+                      img: 'img/product/IMAGER5016A.png',
+                      link: '##'
+                    },
+                    {
+                      title: '移動式-背包\nZ+F FlexScan22',
+                      content: '解放雙手，高效作業',
+                      img: 'img/product/FlexScan22.png',
+                      link: '##'
+                    },
+                    {
+                      title: '移動式-車載\nZ+F PROFILER902C',
+                      content: '移動測繪利器，高效精準',
+                      img: 'img/product/PROFILER902C.png',
+                      link: '##'
+                    }
+                  ];
+                each item in productsList
+                  .swiper-slide.product-card__slide
+                    +ProductCard(item)
+  
+        section
+          //- .--sm修飾符(--container-width: 88rem)
+          .container.--sm
+            .l-product__content
+              h2.o-title.--align-center.u-text-2xl 點雲處理軟體
+              p 3D雷射掃瞄儀的用途是建立物體幾何表面的點雲（point cloud），這些點雲用來表現物體的表面形狀，愈高解析度(高密度)的點雲可以建立 更精確的模型。若搭配照片機或是攝影機掃瞄儀能夠取得物體表面顏色，同時進一步在點雲重建模型的表面上貼上材質。讓點雲模型充滿真實感。
+              br
+              p 3D掃瞄儀就像照相機，只是照像機蒐集的資料都是二維的X、Y的色彩資料。而3D雷射掃瞄儀是測量物體到雷射掃瞄儀中心原點(0,0,0,)的距離。 點雲資料即是大量X，Y，Z，R，G，B座標點集合。點雲應用具有相當廣泛的用途，依據不同用途市面上有很多相關應用軟體。
+
+            .swiper.product-card__swiper
+              .swiper-wrapper
+                -
+                  const softwaresList = [
+                    {
+                      title: 'Arena4D',
+                      content: '點雲資料庫/點雲動畫製作',
+                      img: 'img/product/arena4d.png',
+                      link: '##'
+                    },
+                    {
+                      title: '3DF Zephyr',
+                      content: '影像3D建模',
+                      img: 'img/product/3dfzephyr.png',
+                      link: '##'
+                    },
+                    {
+                      title: 'Agiso Metashape',
+                      content: '影像3D建模',
+                      img: 'img/product/metashape.png',
+                      link: '##'
+                    },
+                    {
+                      title: 'Gexcel Reconstructor',
+                      content: '古蹟建築完整處理',
+                      img: 'img/product/jrc.png',
+                      link: '##'
+                    },
+                    {
+                      title: 'ClassNK-PEERLESS',
+                      content: '管線、廠房自動判識建模',
+                      img: 'img/product/classNK.png',
+                      link: '##'
+                    },
+                    {
+                      title: 'Clearadge3D',
+                      content: '管線、廠房自動判識建模',
+                      img: 'img/product/clearedge.png',
+                      link: '##'
+                    }
+                  ];
+                each item in softwaresList
+                  .swiper-slide.product-card__slide
+                    +ProductCard(item)          
+
+    include layouts/_Scripts.pug
+    script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js")
+    script.
+      const ScannerSwiper = new Swiper('.product-card__swiper', {
+         longSwipesRatio: 0.1,
+          loop: true,
+          speed: 1200,
+          // 最後的斷點
+          slidesPerView: '3',
+          spaceBetween: 12,
+          centeredSlides: true,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+          },
+       });
+      const SoftwareSwiper = new Swiper('.product-card__swiper', {
+          longSwipesRatio: 0.1,
+          loop: true,
+          speed: 1200,
+          // 最後的斷點
+          slidesPerView: '3',
+          spaceBetween: 12,
+          centeredSlides: true,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+          },
+      
+       });

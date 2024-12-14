@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+  head
+    include layouts/_Settings.pug
+    -
+      path = 'map.html';
+      pageTitle = '地圖';
+      infoTitle = '公司位置';
+      description = '台中市南屯區黎明路一段830號';
+      image = '';
+    include layouts/_Head.pug
+  body
+    include layouts/_Header.pug
+
+    main     
+      section.l-map
+        h2.o-title.--align-center.u-text-2xl MAP
+        .container
+          .l-map__google-mask
+            iframe.l-map__google(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3641.124287078942!2d120.63306667613325!3d24.132272978411763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693dca576b44cb%3A0xab6508c147cd701a!2z5Yqb5byY56eR5oqA6IKh5Lu95pyJ6ZmQ5YWs5Y-4IExlYWRlcnRUZWsgQ28uLEx0ZC4!5e0!3m2!1szh-TW!2stw!4v1734110479226!5m2!1szh-TW!2stw"
+              style="border:0;"
+              allowfullscreen="" 
+              loading="lazy",
+              referrerpolicy="no-referrer-when-downgrade"
+            )
+
+
+
+
+    include layouts/_Scripts.pug

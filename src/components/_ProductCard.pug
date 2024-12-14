@@ -1,0 +1,18 @@
+mixin ProductCard(options)
+  -
+    const props = Object.assign({
+      title: '',
+      content: '',
+      img: '',
+      link: '##'
+    }, options);
+
+  article.product-card
+    .product-card__wrap
+      a.product-card__img-mask(href=props.link)
+        img(src=props.img, alt=props.title)
+      .product-card__body
+        h3.u-text-md.u-pre-wrap #{props.title}
+        p.product-card__desc #{props.content}
+
+
